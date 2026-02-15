@@ -32,6 +32,6 @@ const socials = [
     {
         name: "X / Twitter",
         Icon: XIcon,
-        url: "https://x.com/dominosaurs",
+        url: "https://x.com/dominosaurs_",
     },
 ];
