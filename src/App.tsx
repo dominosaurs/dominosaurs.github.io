@@ -11,6 +11,29 @@ function App() {
                 maxHeight: "calc(100vh - 64px)",
             }}
         >
+            <p
+                style={{
+                    opacity: 0.05,
+                    transitionDuration: "0.2s",
+                }}
+                onMouseEnter={(e) => {
+                    e.currentTarget.style.opacity = "0.2";
+                }}
+                onMouseLeave={(e) => {
+                    e.currentTarget.style.opacity = "0.05";
+                }}
+            >
+                proud member of the{" "}
+                <a
+                    href="https://lara-army.github.io"
+                    style={{
+                        color: "var(--primary-color)",
+                    }}
+                >
+                    Laravel Indonesia
+                </a>
+                .
+            </p>
             <h1
                 style={{
                     margin: 0,

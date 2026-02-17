@@ -44,15 +44,62 @@
       "description": "Full time learner, mostly a web developer.",
       "sameAs": [
         "https://github.com/dominosaurs",
-        "https://x.com/dominosaurs_"
+        "https://x.com/dominosaurs_",
+        "https://instagram.com/dominosaurs"
       ]
     }
     </script>
 </head>
 
 <body>
+    <div id="bg-pattern"></div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            const container = document.getElementById("bg-pattern");
+            if (!container) return;
+
+            const IMAGES = [
+                "/assets/lara-pizza.png",
+                "/assets/dominosaurs.png"
+            ];
+
+            const MAX_SIZE = 320;
+            const MIN_SIZE = 64;
+
+            const COUNT = Math.floor((window.innerWidth * window.innerHeight) / 90000);
+            const TOTAL = Math.max(8, Math.min(COUNT, 22));
+
+            function rand(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            function pick(arr) {
+                return arr[Math.floor(Math.random() * arr.length)];
+            }
+
+            for (let i = 0; i < TOTAL; i++) {
+                const img = document.createElement("img");
+                img.src = pick(IMAGES);
+                img.className = "bg-obj";
+
+                const size = rand(MIN_SIZE, MAX_SIZE);
+                const x = rand(-5, 95);
+                const y = rand(-5, 95);
+                const rot = rand(0, 360);
+
+                img.style.width = `${size}px`;
+                img.style.height = `${size}px`;
+                img.style.left = `${x}vw`;
+                img.style.top = `${y}vh`;
+                img.style.transform = `rotate(${rot}deg)`;
+
+                container.appendChild(img);
+            }
+        })
+    </script>
 </body>
 
 </html>
