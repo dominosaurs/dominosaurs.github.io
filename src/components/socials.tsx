@@ -1,4 +1,5 @@
 import GithubIcon from "./icons/github";
+import InstagramIcon from "./icons/instagram";
 import XIcon from "./icons/x";
 
 export default function Socials() {
@@ -33,5 +34,10 @@ const socials = [
         name: "X / Twitter",
         Icon: XIcon,
         url: "https://x.com/dominosaurs_",
+    },
+    {
+        name: "Instagram",
+        Icon: InstagramIcon,
+        url: "https://instagram.com/dominosaurs",
     },
 ];
